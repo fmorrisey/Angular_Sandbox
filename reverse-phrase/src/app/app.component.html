@@ -2,10 +2,6 @@
 <h1>Reverse a Phrase</h1>
 <div>
     <div>
-        <label>{{ reverseText }}</label>
-    </div>
-    <br />
-    <div>
         <input 
             (input)="onInputText($any($event.target).value)"
             placeholder="Enter a phrase"
@@ -19,4 +15,8 @@
         [disabled]="!text.length"
     >
         Submit</button>
+</div>
+<br />
+<div>
+    <label>{{ reverseText }}</label>
 </div>
