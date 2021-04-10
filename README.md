@@ -4,7 +4,8 @@ One repository for multiple projects
 
 1. ### Reverse Phrase
 
-   TBD
+   - event listeners
+   - bindings
 
 2. ### TBD
    TBD
