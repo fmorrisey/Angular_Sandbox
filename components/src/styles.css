@@ -11,4 +11,5 @@
 .wrapper {
   display: grid;
   grid-template-columns: 12vw repeat(1, 2fr) 1vw;
+  /* grid-auto-rows: 12vw; */
 }
