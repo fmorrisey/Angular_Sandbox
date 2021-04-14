@@ -1,3 +1,21 @@
+:host {
+  font-size: 2vw;
+}
+
+.post {
+  padding: 1vw;
+}
+
+.author {
+  font-size: 2vw;
+  font-style: italic;
+}
+
+.title {
+  font-size: 2.2vw;
+  font-weight: bold;
+}
+
 img {
   opacity: 0.8;
 }
