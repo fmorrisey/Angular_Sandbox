@@ -21,3 +21,7 @@ One repository for multiple projects
 
 3. ### Pipes
    - Pipes | on Pipes | on Pipes |
+   - name | titleCase
+   - todaysDate | date: 'MMM dd yy'
+   - pizza | json
+   - custom pipes
