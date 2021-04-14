@@ -16,7 +16,8 @@ One repository for multiple projects
    - Post Component
    - property bindings
    - passing data
-   - css basics for angular
+   - CSS basics for Angular
+   - CSS grid basics
 
-3. ### TBD
-   - TBD
+3. ### Pipes
+   - Pipes | on Pipes | on Pipes |
