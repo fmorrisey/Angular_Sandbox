@@ -1,0 +1,12 @@
+<h3>Custom Pipe</h3>
+<p>{{ cost | double | currency }}</p>
+<p>{{ cost | double: 2 : true | currency }}</p>
+<p *ngIf="(cost | double) > 3000">Show Me!</p>
+
+<h3>Multi-pipes</h3>
+<p>{{ temperature | double | number: '1.2-2' }}</p>
+
+<h3>Pipes 101</h3>
+<p>{{ name | titlecase }}</p>
+<p>{{ todaysDate | date: 'short' }}</p>
+<pre>{{pizza | json}}</pre>
