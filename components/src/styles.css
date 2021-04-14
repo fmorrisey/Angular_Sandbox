@@ -2,3 +2,12 @@
 .container {
   flex-direction: column;
 }
+
+.body {
+  display: flex;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 8vw repeat(1, 2fr) 1vw;
+}
