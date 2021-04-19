@@ -20,8 +20,12 @@ One repository for multiple projects
    - CSS grid basics
 
 3. ### Pipes
+
    - Pipes | on Pipes | on Pipes |
    - name | titleCase
    - todaysDate | date: 'MMM dd yy'
    - pizza | json
    - custom pipes
+
+4. ### Directives
+   - Directives are neat I guess
