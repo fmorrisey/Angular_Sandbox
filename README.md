@@ -28,4 +28,9 @@ One repository for multiple projects
    - custom pipes
 
 4. ### Directives
-   - Directives are neat I guess
+   - `*ngFor`
+   - `*ngIf`
+   - `*ngSwitch`
+   - `[ngClass]`
+   - `[ngStyles]`
+   - functions in directives
