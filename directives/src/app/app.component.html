@@ -1,12 +1,28 @@
-<ul class="pagination">
-    <li class="page-item"><a class="page-link" href="#"></a></li>
-    <li class="page-item" *ngFor="let img of images; let i = index;"
-        [ngClass]="{ active: i === activeImg }"
-    >
+<div class="container-flex">
+    
+    <div class="row justify-content-center">
         
-        <a class="page-link" href="#">{{ i + 1 }}</a>
-    </li>
-    <li class="page-item">
-        <a href="#" class="page-link"></a>
-    </li>
-</ul>
+        <div class="col-3 center">
+            <ul class="pagination">
+                <li class="page-item" [ngClass]="{ disabled: activeImg === 0 }">
+                    <a class="page-link" href="#" (click)="activeImg = activeImg - 1">Previous</a>
+                </li>
+                <li class="page-item"
+                    *ngFor="let img of images; let i = index;"
+                    [ngClass]="{ active: i === activeImg }">    
+                    <a class="page-link" href="#" (click)="activeImg = activeImg = 1">{{ i + 1 }}</a>
+                </li>
+                <li class="page-item"[ngClass]="{ disabled: activeImg === images.length - 1 }">
+                    <a href="#" class="page-link" (click)="activeImg = activeImg + 1">Next</a>
+                </li>
+            </ul>
+            <div class="card">
+                <img [src]="images[activeImg].url" class="card-img-top" [alt]="images[activeImg].title">
+                <div class="card-body">
+                    <h5 class="card-title">{{ images[activeImg].title }}</h5>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
