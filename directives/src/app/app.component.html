@@ -20,6 +20,11 @@
                 <img [src]="images[activeImg].url" class="card-img-top" [alt]="images[activeImg].title">
                 <div class="card-body">
                     <h5 class="card-title">{{ images[activeImg].title }}</h5>
+                    <ng-container [ngSwitch]="images[activeImg].downloadable">
+                        <p class="card-text" *ngSwitchCase="1">Downloadable</p>
+                        <p class="card-text" *ngSwitchCase="2">purchasable</p>
+                        <p class="card-text" *ngSwitchDefault>Not Available</p>
+                    </ng-container>
                 </div>
             </div>
         </div>
