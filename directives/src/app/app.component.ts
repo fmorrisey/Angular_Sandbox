@@ -7,6 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   activeImg = 0;
+  showImage(index: number) {
+    return Math.abs(this.activeImg - index) < 3;
+  }
 
   images = [
     {
