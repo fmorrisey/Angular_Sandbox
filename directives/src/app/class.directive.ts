@@ -1,10 +1,10 @@
 import { Directive } from '@angular/core';
 
 @Directive({
-  selector: '[appClass]'
+  selector: '[appClass]',
 })
 export class ClassDirective {
-
-  constructor() { }
-
+  constructor() {
+    console.log('Class Directive ACTIVATED!!!');
+  }
 }
