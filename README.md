@@ -34,3 +34,5 @@ One repository for multiple projects
    - `[ngClass]`
    - `[ngStyles]`
    - functions in directives
+   - Custom Directives
+   - Props Binding
