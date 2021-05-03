@@ -1,5 +1,6 @@
 import { Directive, ElementRef, Input } from '@angular/core';
 
+// THIS IS AN ATTRIBUTE DIRECTIVE
 @Directive({
   selector: '[appClass]',
 })
