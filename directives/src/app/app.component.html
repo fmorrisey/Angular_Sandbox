@@ -1,32 +1,49 @@
 <div class="container-flex">
-    <div class="row justify-content-center">
-        <div class="col-3 center">
-            <ul class="pagination">
-                <li class="page-item" [ngClass]="{ disabled: activeImg === 0 }">
-                    <a class="page-link" href="#" (click)="activeImg = activeImg - 1">Previous</a>
-                </li>
-                <ng-container *ngFor="let img of images; let i = index;">
-                    <li class="page-item"
-                        [ngClass]="{ active: i === activeImg }"
-                        *ngIf="showImage(i)">    
-                        <a class="page-link" href="#" (click)="activeImg = activeImg = 1">{{ i + 1 }}</a>
-                    </li>
-                </ng-container>
-                <li class="page-item"[ngClass]="{ disabled: activeImg === images.length - 1 }">
-                    <a href="#" class="page-link" (click)="activeImg = activeImg + 1">Next</a>
-                </li>
-            </ul>
-            <div class="card">
-                <img [src]="images[activeImg].url" class="card-img-top" [alt]="images[activeImg].title">
-                <div class="card-body">
-                    <h5 class="card-title" appClass>{{ images[activeImg].title }}</h5>
-                    <ng-container [ngSwitch]="images[activeImg].downloadable">
-                        <p class="card-text" *ngSwitchCase="1">Downloadable</p>
-                        <p class="card-text" *ngSwitchCase="2">purchasable</p>
-                        <p class="card-text" *ngSwitchDefault>Not Available</p>
-                    </ng-container>
-                </div>
-            </div>
+  <div class="row justify-content-center">
+    <div class="col-3 center">
+      <ul class="pagination">
+        <li class="page-item" [appClass]="{ disabled: activeImg === 0 }">
+          <a class="page-link" href="#" (click)="activeImg = activeImg - 1"
+            >Previous</a
+          >
+        </li>
+        <ng-container *ngFor="let img of images; let i = index">
+          <li
+            class="page-item"
+            [appClass]="{ active: i === activeImg }"
+            *ngIf="showImage(i)"
+          >
+            <a class="page-link" href="#" (click)="activeImg = activeImg = 1">{{
+              i + 1
+            }}</a>
+          </li>
+        </ng-container>
+        <li
+          class="page-item"
+          [appClass]="{ disabled: activeImg === images.length - 1 }"
+        >
+          <a href="#" class="page-link" (click)="activeImg = activeImg + 1"
+            >Next</a
+          >
+        </li>
+      </ul>
+      <div class="card">
+        <img
+          [src]="images[activeImg].url"
+          class="card-img-top"
+          [alt]="images[activeImg].title"
+        />
+        <div class="card-body">
+          <h5 class="card-title">
+            {{ images[activeImg].title }}
+          </h5>
+          <ng-container [ngSwitch]="images[activeImg].downloadable">
+            <p class="card-text" *ngSwitchCase="1">Downloadable</p>
+            <p class="card-text" *ngSwitchCase="2">purchasable</p>
+            <p class="card-text" *ngSwitchDefault>Not Available</p>
+          </ng-container>
         </div>
+      </div>
     </div>
+  </div>
 </div>
