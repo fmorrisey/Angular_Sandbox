@@ -35,4 +35,5 @@ One repository for multiple projects
    - `[ngStyles]`
    - functions in directives
    - Custom Directives
-   - Props Binding
+   - Props Binding / Attribute Directives
+   - - the class directive mimics the ngClass directive
