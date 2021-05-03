@@ -36,4 +36,6 @@ One repository for multiple projects
    - functions in directives
    - Custom Directives
    - Props Binding / Attribute Directives
-   - - the class directive mimics the ngClass directive
+   - - the class directive mimics the `[ngClass]` directive
+   - Structual Directives
+   - - the loop directive mimics the `\*ngFor` directive
