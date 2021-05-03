@@ -2,17 +2,18 @@
     <div class="row justify-content-center">
         <div class="col-3 center">
             <ul class="pagination">
-                <li class="page-item" [ngClass]="{ disabled: activeImg === 0 }">
+                <li class="page-item" [appClass]="{ disabled: activeImg === 0 }">
                     <a class="page-link" href="#" (click)="activeImg = activeImg - 1">Previous</a>
                 </li>
-                <ng-container *ngFor="let img of images; let i = index;">
+                <!-- <ng-container *ngFor="let img of images; let i = index;"> -->
+                <ng-container *appLoop="images.length; let i = index;">
                     <li class="page-item"
-                        [ngClass]="{ active: i === activeImg }"
+                        [appClass]="{ active: i === activeImg }"
                         *ngIf="showImage(i)">    
                         <a class="page-link" href="#" (click)="activeImg = activeImg = 1">{{ i + 1 }}</a>
                     </li>
                 </ng-container>
-                <li class="page-item"[ngClass]="{ disabled: activeImg === images.length - 1 }">
+                <li class="page-item"[appClass]="{ disabled: activeImg === images.length - 1 }">
                     <a href="#" class="page-link" (click)="activeImg = activeImg + 1">Next</a>
                 </li>
             </ul>

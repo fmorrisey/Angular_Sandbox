@@ -1,5 +1,5 @@
 import { Directive, ViewContainerRef, TemplateRef, Input } from '@angular/core';
-
+// STRUCTURAL DIRECTIVES
 @Directive({
   selector: '[appLoop]',
 })
