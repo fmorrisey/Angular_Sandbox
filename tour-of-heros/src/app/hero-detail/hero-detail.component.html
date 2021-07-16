@@ -1,0 +1,21 @@
+<!-- unselected default -->
+<div *ngIf="!selectedHero">
+    <h2>Hero</h2>
+    <div><span>id: </span></div>
+    <hr />
+    <div>
+        <label for="hero-name">Hero name: </label>
+        <input id="hero-name" placeholder="name" />
+    </div>
+</div>
+
+<!-- selected template -->
+<div *ngIf="selectedHero">
+    <h2>{{selectedHero.name | uppercase}}</h2>
+    <div><span>id: </span>{{selectedHero.id}}</div>
+    <hr />
+    <div>
+        <label for="hero-name">Hero name: </label>
+        <input id="hero-name" [(ngModel)]="selectedHero.name" placeholder="name" />
+    </div>
+</div>
