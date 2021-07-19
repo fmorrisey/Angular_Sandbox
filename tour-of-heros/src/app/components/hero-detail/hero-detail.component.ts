@@ -8,6 +8,7 @@ import { Hero } from '../../interfaces/hero';
 })
 export class HeroDetailComponent implements OnInit {
   constructor() {}
+
   @Input() hero?: Hero;
 
   ngOnInit(): void {}
