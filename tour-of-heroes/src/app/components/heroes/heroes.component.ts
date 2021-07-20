@@ -28,6 +28,8 @@ export class HeroesComponent implements OnInit {
   getHeros(): void {
     //  Retrieves heroes from the service
     //  This implements a synchronous signature, not realistic for real world
-    this.heroes = this.heroService.getHeroes();
+    // this.heroes = this.heroService.getHeroes();
+    // Observables - subscribe pass array to the callback
+    this.heroService.getHeroes().subscribe((heroes) => (this.heroes = heroes));
   }
 }

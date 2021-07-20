@@ -9,7 +9,15 @@ import { HEROES } from '../data/mock-heroes';
 })
 export class HeroService {
   constructor() {}
-  getHeroes(): Hero[] {
-    return HEROES;
+
+  getHeroes(): Observable<Hero[]> {
+    const heroes = of(HEROES);
+    return heroes;
   }
+
+  // Replaced to as this was Synchronous
+  /**  getHeroes(): Hero[] {
+    return HEROES;
+    } 
+   */
 }
