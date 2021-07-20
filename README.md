@@ -39,3 +39,7 @@ One repository for multiple projects
    - - the class directive mimics the `[ngClass]` directive
    - Structural Directives
    - - the loop directive mimics the `\*ngFor` directive
+
+5. ### Tour of Heros
+    - Basics of Angular Architecture
+    
