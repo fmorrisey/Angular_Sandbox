@@ -1,15 +1,20 @@
+/**
+ * MESSAGE COMPONENT
+ *
+ * Displays all messages including messages sents by the `HeroService` when it fetches heroes.
+ */
+
 import { Component, OnInit } from '@angular/core';
+
+import { MessageService } from 'src/app/services/message.service';
 
 @Component({
   selector: 'app-messages',
   templateUrl: './messages.component.html',
-  styleUrls: ['./messages.component.scss']
+  styleUrls: ['./messages.component.scss'],
 })
 export class MessagesComponent implements OnInit {
+  constructor(public messageService: MessageService) {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
