@@ -12,6 +12,7 @@ import { MessagesComponent } from './components/messages/messages.component';
 
 // SERVICES
 import { HeroService } from './services/hero.service';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { HeroService } from './services/hero.service';
     HeroesComponent,
     HeroDetailComponent,
     MessagesComponent,
+    DashboardComponent,
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule],
   providers: [HeroService],
