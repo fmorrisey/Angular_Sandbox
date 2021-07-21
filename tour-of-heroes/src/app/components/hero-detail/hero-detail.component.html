@@ -1,21 +1,9 @@
-<!-- unselected default -->
-<div *ngIf="!hero">
-    <h2>Hero</h2>
-    <div><span>id: </span></div>
-    <hr />
-    <div>
-        <label for="hero-name">Hero name: </label>
-        <input id="hero-name" placeholder="name" />
-    </div>
-</div>
-
-<!-- selected template -->
 <div *ngIf="hero">
-    <h2>{{hero.name | uppercase}}</h2>
+    <h2>{{hero.name | uppercase}} Details</h2>
     <div><span>id: </span>{{hero.id}}</div>
-    <hr />
     <div>
         <label for="hero-name">Hero name: </label>
-        <input id="hero-name" [(ngModel)]="hero.name" placeholder="name" />
+        <input id="hero-name" [(ngModel)]="hero.name" placeholder="hero's name" />
+        <button (click)="goBack()">Go back</button>
     </div>
 </div>

@@ -17,23 +17,22 @@ export class HeroesComponent implements OnInit {
   public heroes: Hero[] = [];
 
   constructor(
-    private heroService: HeroService,
-    private messageService: MessageService
+    private heroService: HeroService // private messageService: MessageService
   ) {}
 
   // Member Methods
   ngOnInit() {
-    this.getHeros();
+    this.getHeroes();
   }
 
-  onSelect(hero: Hero): void {
-    // Sets the current selected hero onClick
-    console.log(hero);
-    this.selectedHero = hero;
-    this.messageService.add(`HeroesComponent: Selected hero id=${hero.id}`);
-  }
+  //   onSelect(hero: Hero): void {
+  //     // Sets the current selected hero onClick
+  //     console.log(hero);
+  //     this.selectedHero = hero;
+  //     // this.messageService.add(`HeroesComponent: Selected hero id=${hero.id}`);
+  //   }
 
-  getHeros(): void {
+  getHeroes(): void {
     //  Retrieves heroes from the service
     //  This implements a synchronous signature, not realistic for real world
     // this.heroes = this.heroService.getHeroes();
