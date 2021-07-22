@@ -13,20 +13,28 @@ import { HEROES } from '../data/mock-heroes';
 
 import { MessageService } from './message.service';
 
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
 @Injectable({
   providedIn: 'root',
 })
 export class HeroService {
-  // Injects a singleton into the constructor
-  constructor(private messageService: MessageService) {}
+  private heroesUrl = 'api/heroes'; //URL to web api
 
-  getHeroes(): Observable<Hero[]> {
-    const heroes = of(HEROES);
-    this.messageService.add('HeroService: fetched heroes');
-    return heroes;
+  constructor(
+    private http: HttpClient,
+    private messageService: MessageService
+  ) {}
+
+  private log(message: string) {
+    this.messageService.add(`HeroService: ${message}`);
   }
 
-  getHero(id: number): Observable<Hero> {
+  public getHeroes(): Observable<Hero[]> {
+    return this.http.get<Hero[]>(this.heroesUrl);
+  }
+
+  public getHero(id: number): Observable<Hero> {
     // For now we'll assume that a hero with the specified `id` always exists.
     // Error handling will be added next.
     const hero = HEROES.find((h) => h.id === id)!;
@@ -35,7 +43,7 @@ export class HeroService {
   }
 
   // Replaced to as this was Synchronous
-  /**  getHeroes(): Hero[] {
+  /* getHeroes(): Hero[] {
     return HEROES;
     } 
    */
