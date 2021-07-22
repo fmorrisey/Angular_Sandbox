@@ -35,12 +35,12 @@ export class HeroService {
   private log(message: string) {
     this.messageService.add(`HeroService: ${message}`);
   }
-  /**
+
+  /*******
    * Handle HTTP Operation failure then let app continue
    * @param operation - name of the operation that failed
    * @param result - optional value to return as the observable results
-   */
-
+   *******/
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       // TODO: send the error to remote logging infra
@@ -53,6 +53,25 @@ export class HeroService {
       return of(result as T);
     };
   }
+  ////////// SEARCH FUNCTIONS //////////
+
+  /* GET heroes whose name contains search term */
+  public searchHeroes(term: string): Observable<Hero[]> {
+    if (!term.trim()) {
+      // if not search term, return empty hero array.
+      return of([]);
+    }
+    return this.http.get<Hero[]>(`${this.heroesUrl}/?name=${term}`).pipe(
+      tap((x) =>
+        x.length
+          ? this.log(`found heroes matching "${term}"`)
+          : this.log(`no heroes matching matching "${term}"`)
+      ),
+      catchError(this.handleError<Hero[]>('search heroes', []))
+    );
+  }
+
+  ////////// CRUD FUNCTIONS //////////
 
   /** GET ALL: get all heros on the server */
   public getHeroes(): Observable<Hero[]> {
