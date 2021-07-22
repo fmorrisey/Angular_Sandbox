@@ -25,18 +25,35 @@ export class HeroesComponent implements OnInit {
     this.getHeroes();
   }
 
+  public getHeroes(): void {
+    //  Retrieves heroes from the service
+    this.heroService.getHeroes().subscribe((heroes) => (this.heroes = heroes));
+
+    // Depreciated
+    //  This implements a synchronous signature, not realistic for real world
+    // this.heroes = this.heroService.getHeroes();
+    // Observables - subscribe pass array to the callback
+  }
+
+  public delete(hero: Hero): void {
+    this.heroes = this.heroes.filter((h) => h !== hero);
+    this.heroService.deleteHero(hero.id).subscribe();
+  }
+
+  public add(name: string): void {
+    name = name.trim();
+    if (!name) {
+      return;
+    }
+    this.heroService.addHero({ name } as Hero).subscribe((hero) => {
+      this.heroes.push(hero);
+    });
+  }
+
   //   onSelect(hero: Hero): void {
   //     // Sets the current selected hero onClick
   //     console.log(hero);
   //     this.selectedHero = hero;
   //     // this.messageService.add(`HeroesComponent: Selected hero id=${hero.id}`);
   //   }
-
-  getHeroes(): void {
-    //  Retrieves heroes from the service
-    //  This implements a synchronous signature, not realistic for real world
-    // this.heroes = this.heroService.getHeroes();
-    // Observables - subscribe pass array to the callback
-    this.heroService.getHeroes().subscribe((heroes) => (this.heroes = heroes));
-  }
 }
