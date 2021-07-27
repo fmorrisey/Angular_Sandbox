@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'Tour of Heros';
+  title = 'Tour of Heroes';
+
+  public randFunc() {
+    let num1: number = 1;
+    let num2: number = 2;
+
+    let result = num1 + num2;
+    console.log('Calculation', result);
+    return result;
+  }
 }
